@@ -7,6 +7,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "preinstall": "npm config set canvas_binary_host_mirror=https://github.com/Automattic/node-canvas/releases/download/"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
