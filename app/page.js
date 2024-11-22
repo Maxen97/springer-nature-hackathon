@@ -22,8 +22,8 @@ export default function Home() {
   }, []);
 
   const handleCardClick = (fileName) => {
-    router.push(`/view/${encodeURIComponent(fileName)}`);
-    /* router.push("/viewbackup"); */
+    /* router.push(`/view/${encodeURIComponent(fileName)}`); */
+    router.push("/viewbackup");
   };
 
   const styles = {
@@ -110,7 +110,7 @@ export default function Home() {
           <div style={styles.grid}>
             {cards.map((card, index) => (
               <div key={index} style={styles.card} onClick={() => handleCardClick(card.name)}>
-                <h2>{card.name}</h2>
+                <h2>{"Book title"}</h2>
                 <p>{card.preview}</p>
               </div>
             ))}
