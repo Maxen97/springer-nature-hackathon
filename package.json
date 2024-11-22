@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "next": "^14.2.18"
+  },
+  "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
+}
+
+}
