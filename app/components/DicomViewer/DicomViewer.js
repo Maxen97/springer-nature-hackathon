@@ -139,7 +139,7 @@ const DicomViewer = ({ dicomUrls }) => {
 
       {/* Viewer Container */}
       {<div className="">
-        <div id="layerGroup0" className="layer-container">
+        <div id="layerGroup0" className="layer-container" style={{width: "500px, height: 500px"}}>
           {/* DWV will inject its elements here */}
         </div>
       </div>}
