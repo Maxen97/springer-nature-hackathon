@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"app\\\\components\\\\DicomViewer\\\\DicomViewer.js -> dwv\":{\"id\":\"app\\\\components\\\\DicomViewer\\\\DicomViewer.js -> dwv\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_dwv_dist_dwv_min_js.js\"]}}"

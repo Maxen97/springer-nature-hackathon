@@ -1,0 +1,27 @@
+<!-- This is a dummy XML format of a book -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<document>
+    <title>Best book ever</title>
+    <authors>Jane Doe, John Doe</authors>
+    <publisher>Springer Nature</publisher>
+    <chapter>
+        <chapter-heading chapterId="1">Chapter 1</chapter-heading>
+        <paragraph>Some text...</paragraph>
+        <figure src="#fig1"></figure>
+        <paragraph>Some more text...</paragraph>
+        <table src="res/data/tables/table1"></table>
+    </chapter>
+    <chapter>
+        <chapter-heading chapterId="2">Chapter 2</chapter-heading>
+        <paragraph>Some other text...</paragraph>
+        <figure src="#fig2"></figure>
+        <paragraph>Some more other text...</paragraph>
+    </chapter>
+    <chapter>
+        <chapter-heading chapterId="3">Chapter 3</chapter-heading>
+        <paragraph>Some alternative text...</paragraph>
+        <figure src="#fig3"></figure>
+        <paragraph>Some more alternative text...</paragraph>
+    </chapter>
+</document>

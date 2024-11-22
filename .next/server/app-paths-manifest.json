@@ -1,0 +1,6 @@
+{
+  "/dicomviewer/page": "app/dicomviewer/page.js",
+  "/page": "app/page.js",
+  "/viewbackup/page": "app/viewbackup/page.js",
+  "/view/[filename]/page": "app/view/[filename]/page.js"
+}

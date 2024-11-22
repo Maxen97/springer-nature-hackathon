@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { parseXMLFile } from '/app/lib/xmlUtils';
+import { xmlParser } from './parser';
 
 function RenderXMLContent({ node }) {
   if (!node) return null;
@@ -17,7 +18,7 @@ function RenderXMLContent({ node }) {
   };
 
   const Element = components[node.nodeName.toLowerCase()] || 'div';
-  
+
   // Handle text nodes
   if (node.nodeType === 3) {
     return node.textContent;
@@ -42,14 +43,17 @@ export default function ViewXML({ params }) {
   useEffect(() => {
     async function loadXMLContent() {
       try {
-        const response = await fetch(`/view/${params.filename}`);
+       /*  const response = await fetch(`/view/${params.filename}`);
         const { content } = await response.json();
-        
+
         // Parse XML string into DOM
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(content, 'text/xml');
-        
-        setXmlContent(xmlDoc.documentElement);
+
+        setXmlContent(xmlDoc.documentElement); */
+        const content = xmlString[params.filename];
+        const htmlString = xmlParser(content);
+        setXmlContent(htmlString);
       } catch (error) {
         console.error('Error:', error);
       }
@@ -63,7 +67,36 @@ export default function ViewXML({ params }) {
 
   return (
     <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <RenderXMLContent node={xmlContent} />
+      {/* <RenderXMLContent node={xmlContent} /> */}
+      <div dangerouslySetInnerHTML={{ __html: xmlContent }} />
     </div>
   );
 }
+
+const xmlString = {
+  "data1.xml": `<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <title>Data 1</title>
+    <preview>This is a sample preview text.</preview>
+    <chapter title="Regular element">
+        <paragraph>This is a sample preview text.</paragraph>
+    </chapter>
+    <chapter title="Mix element">
+    </chapter>
+</document>`,
+  "data2.xml": `<?xml version="1.0" encoding="UTF-8"?>
+
+<document>
+    <title>Data 1</title>
+    <preview>This is a sample preview text.</preview>
+    <chapter title="Regular element">
+        <paragraph>This is a sample preview text.</paragraph>
+    </chapter>
+
+    <chapter title="Mix element">
+        <paragraph>This is a sample preview text.</paragraph>
+        <interactive></interactive>
+        <paragraph>This is a sample preview text.</paragraph>
+    </chapter>
+</document>`,
+};
